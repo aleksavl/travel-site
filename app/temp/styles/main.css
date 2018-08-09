@@ -479,6 +479,7 @@ a {
   }
 
 .large-hero__text-content {
+    padding-top: 88px;
     position: absolute;
     left: 0;
     top: 50%;
@@ -486,6 +487,13 @@ a {
             transform: translateY(-50%);
     width: 100%;
     text-align: center;
+  }
+
+@media screen and (min-width: 800px) {
+
+.large-hero__text-content {
+      padding-top: 60px
+  }
   }
 
 .large-hero__title {
@@ -1090,4 +1098,110 @@ a {
       margin-bottom: 0;
       padding-right: 1.4rem
   }
+  }
+
+.site-header {
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+@media screen and (min-width: 800px) {
+
+.site-header {
+    background-color: rgba(47,85,114, .3)
+}
+  }
+
+.site-header__btn-container {
+    float: right;
+  }
+
+.site-header__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) scale(.8);
+            transform: translateX(-50%) scale(.8);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    background-color: #2f5572;
+    padding: 25px 36px;
+  }
+
+@media screen and (min-width: 800px) {
+
+.site-header__logo {
+      left: auto;
+      -webkit-transform: translateX(0);
+              transform: translateX(0)
+  }
+  }
+
+.site-header__logo__graphic {
+    text-indent: -9999px;
+  }
+
+.site-header__menu-content {
+    display: none;
+  }
+
+.site-header__menu-content::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+@media screen and (min-width: 800px) {
+
+.site-header__menu-content {
+      display: block
+  }
+  }
+
+.site-header__menu-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+  }
+
+@media screen and (min-width: 800px) {
+
+.site-header__menu-icon {
+      display: none
+  }
+  }
+
+.primary-nav--pull-right {
+    float: right;
+  }
+
+.primary-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+.primary-nav ul::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.primary-nav li {
+    list-style-type: none;
+    float: left;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+.primary-nav a {
+    color: #FFF;
+    font-weight: 300;
+    text-decoration: none;
+    padding: 12px 0;
   }
