@@ -17,12 +17,16 @@ gulp.task('watch', function() {
     gulp.start('cssInject');
   });
 
-  watch('./app/assets/images/icons/**/*.svg', function() {
-    gulp.start('icons');
+  watch('./app/assets/scripts/**/*.js', function() {
+    gulp.start('scriptsRefresh');
   });
 });
 
 gulp.task('cssInject', ['css'] , function() {
   return gulp.src('./app/temp/styles/main.css')
     .pipe(browserSync.stream());
+});
+
+gulp.task('scriptsRefresh', ['scripts'], function() {
+  browserSync.reload();
 });

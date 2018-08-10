@@ -1,13 +1,24 @@
 {
-  "ecmaVersion": 6,
+  "ecmaVersion": "7",
   "libs": [
+    "browser",
     "jquery"
   ],
-  "loadEagerly": [],
+  "loadEagerly": [
+    "app/assets/scripts/**/*.js"
+  ],
   "dontLoad": [
     "node_modules/**"
   ],
   "plugins": {
-    "doc_comment": true
+    "doc_comment": true,
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    }
   }
 }
