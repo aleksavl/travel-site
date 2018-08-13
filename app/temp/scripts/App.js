@@ -10673,6 +10673,10 @@ var _StickyHeader = __webpack_require__(6);
 
 var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
+var _Modal = __webpack_require__(8);
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
 var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -10683,6 +10687,7 @@ var mobileMenu = new _MobileMenu2.default();
 var featuresRevealOnScroll = new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
 var testimonialsRevealOnScroll = new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "65%");
 var stickyHeader = new _StickyHeader2.default();
+var modal = new _Modal2.default();
 
 /***/ }),
 /* 3 */
@@ -10892,7 +10897,6 @@ var StickyHeader = function () {
     key: "createPageSectionWaypoints",
     value: function createPageSectionWaypoints() {
       var that = this;
-      console.log(that);
       this.pageSections.each(function (i, el) {
         var currentItem = el;
         new Waypoint({
@@ -11288,6 +11292,80 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   // default options
   $.fn.smoothScroll.defaults = defaults;
 });
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Modal = function () {
+  function Modal() {
+    _classCallCheck(this, Modal);
+
+    this.openModalButton = (0, _jquery2.default)(".open-modal");
+    this.modal = (0, _jquery2.default)(".modal");
+    this.closeModalButton = (0, _jquery2.default)(".modal__close");
+    this.events();
+  }
+
+  _createClass(Modal, [{
+    key: "events",
+    value: function events() {
+      var _this = this;
+
+      // Clicking open modal openModalButton
+      this.openModalButton.click(function () {
+        _this.openModal();
+      });
+      // Clicking the x close modal openModalButton
+      this.closeModalButton.click(function () {
+        _this.closeModal();
+      });
+      // pushes any key
+      (0, _jquery2.default)(document).keydown(function () {
+        _this.keyPressHandler(event);
+      });
+    }
+  }, {
+    key: "keyPressHandler",
+    value: function keyPressHandler(event) {
+      if (event.keyCode === 27) {
+        this.closeModal();
+      }
+    }
+  }, {
+    key: "openModal",
+    value: function openModal() {
+      event.preventDefault();
+      this.modal.addClass("modal--opened");
+    }
+  }, {
+    key: "closeModal",
+    value: function closeModal() {
+      this.modal.removeClass("modal--opened");
+    }
+  }]);
+
+  return Modal;
+}();
+
+exports.default = Modal;
 
 /***/ })
 /******/ ]);

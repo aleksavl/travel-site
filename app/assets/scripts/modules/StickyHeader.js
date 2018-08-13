@@ -33,7 +33,6 @@ class StickyHeader {
 
   createPageSectionWaypoints() {
     let that = this;
-    console.log(that);
     this.pageSections.each((i,el) => {
       let currentItem = el;
       new Waypoint({
